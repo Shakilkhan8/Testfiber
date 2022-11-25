@@ -47,7 +47,7 @@ class CarpetProductBarcode(models.Model):
             self.digital_print_child = False
 
         seq = self.env['barcode.sequence.number'].search([], limit=1)
-        seq_num = 0
+        seq_num = 1
         sequence_with_date = None
         current_date = datetime.datetime.now().date()
 
@@ -55,7 +55,7 @@ class CarpetProductBarcode(models.Model):
         if not seq:
             seq.create({
                 'date': datetime.datetime.now().date(),
-                'sequence': seq_num + 1,
+                'sequence': seq_num,
             })
             sequence_with_date = str(current_date).split('-')[0] + str(current_date).split('-')[1] + str(current_date).split('-')[2] + str(seq_num)
             self.batch_number = sequence_with_date
