@@ -25,6 +25,9 @@ class SaleOrderListView(models.Model):
 
     def action_confirm(self):
         self.confirmation_date = datetime.datetime.now().date()
+        res = super(SaleOrderListView, self).action_confirm()
+        self.state = 'sale'
+        return res
 
 
 
