@@ -24,8 +24,8 @@ class SaleOrderListView(models.Model):
         self.state = 'dispatch'
 
     def action_confirm(self):
-        self.dispatch_date = datetime.datetime.now().date()
-        
+        self.confirmation_date = datetime.datetime.now().date()
+
 
 
 

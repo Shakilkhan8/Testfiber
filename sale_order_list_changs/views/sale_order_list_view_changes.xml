@@ -32,8 +32,6 @@
                 </xpath>
                 <xpath expr="//field[@name='date_order']" position="replace">
                     <field name="receive_date" string="Receive Date"/>
-                    <field name="dispatch_date" readonly="1"/>
-                    <field name="confirmation_date" readonly="1"/>
                 </xpath>
                 <xpath expr="//field[@name='date_order']" position="after">
                     <field name="expect_date" string="Expect Date"/>
