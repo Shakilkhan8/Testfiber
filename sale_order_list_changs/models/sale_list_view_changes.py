@@ -1,3 +1,5 @@
+import datetime
+
 from odoo import api, fields, models
 
 class SaleOrderListView(models.Model):
@@ -14,7 +16,12 @@ class SaleOrderListView(models.Model):
         ('cancel', 'Cancelled'),
     ], string='Status', readonly=True, copy=False, index=True, tracking=3, default='draft')
 
+    dispatch_date = fields.Date('Dispatch Date')
+    confirmation_date = fields.Date('Confirmation Date')
+
     def action_dispatch(self):
+        self.dispatch_date = datetime.datetime.now().date()
         self.state = 'dispatch'
+
 
 
